@@ -12,18 +12,15 @@ public class EmptyList<T> implements FunList<T> {
     }
 
 	public FunList<T> remove(T t) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new EmptyListException();
 	}
 
 	public boolean contains(T t) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	public int indexOf(T t) {
-		// TODO Auto-generated method stub
-		return 0;
+		return -1;
 	}
 
 	public void each(Consumer<T> consumer) {

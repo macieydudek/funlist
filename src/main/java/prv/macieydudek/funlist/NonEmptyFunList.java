@@ -26,8 +26,10 @@ public class NonEmptyFunList<T> implements FunList<T> {
 
 	@Override
 	public FunList<T> remove(T t) {
-		// TODO Auto-generated method stub
-		return null;
+		if(this.head.equals(t)){
+			return this.tail;
+		} 
+		return new NonEmptyFunList<T>(head, tail.remove(t));			
 	}
 
 	@Override
@@ -37,14 +39,15 @@ public class NonEmptyFunList<T> implements FunList<T> {
 
 	@Override
 	public int indexOf(T t) {
-		// TODO Auto-generated method stub
-		return 0;
+		if(this.head.equals(t)) {
+			return 0;
+		}
+		return 1 + tail.indexOf(t);
 	}
 
 	@Override
 	public void each(Consumer<T> consumer) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
