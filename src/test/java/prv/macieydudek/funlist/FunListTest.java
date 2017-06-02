@@ -56,7 +56,18 @@ public class FunListTest {
 		FunList<String> list = FunList.empty(String.class);
 		//when
 		list = list.add("element1").add("element2").add("element3");
+		//then
 		assertEquals(2, list.indexOf("element3"));
+	}
+	
+	@Test
+	public void shouldReturnNegativeIndexOfNonExistingElement() {
+		//given
+		FunList<String> list = FunList.empty(String.class);
+		//when
+		list = list.add("element1");
+		//then
+		assertTrue(list.indexOf("element2") < 0);
 	}
 
 }

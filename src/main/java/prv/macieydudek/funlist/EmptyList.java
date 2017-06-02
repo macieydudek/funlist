@@ -20,7 +20,7 @@ public class EmptyList<T> implements FunList<T> {
 	}
 
 	public int indexOf(T t) {
-		return -1;
+		return -2;
 	}
 
 	public void each(Consumer<T> consumer) {
